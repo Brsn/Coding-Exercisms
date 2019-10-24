@@ -1,0 +1,2 @@
+# exercisms
+My exercism solutions
