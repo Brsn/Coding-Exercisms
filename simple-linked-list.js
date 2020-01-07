@@ -1,5 +1,5 @@
 
-export class Element {
+class Element {
   //Element is a node, but test specs want an "Element"
   constructor(value) {
     this.value = value;
@@ -8,7 +8,7 @@ export class Element {
     //next is the pointer
   }
 }
-export class List {
+class List {
 
   constructor(arr = []) {
 
@@ -40,14 +40,29 @@ export class List {
   }
 
   toArray() {
-    throw new Error("Remove this statement and implement this function");
+    let arr = [];
+    let leadNode = this.head;
+    //grabs lead head or where we have the value
+    while (leadNode) {
+      arr.push(leadNode.value);
+      leadNode = leadNode.next;
+    }
+    return arr;
   }
 
   reverse() {
-    throw new Error("Remove this statement and implement this function");
+    let arr = [];
+    let leadNode = this.head;
+    //grabs lead head or where we have the value
+    while (leadNode) {
+      arr.push(leadNode.value);
+      leadNode = leadNode.next;
+    }
+    return arr.reverse();
   }
 
 }
+
 //const list = new List();
 //const node = new Element(1);
 //console.log(node);
@@ -70,3 +85,10 @@ console.log(list);
 
 const listTwo = new List([1, 2, 3]);
 console.log(listTwo);
+const oneList = new List([1]);
+oneList.toArray();
+console.log(listTwo);
+console.log(listTwo.toArray());
+console.log(listTwo.reverse());
+console.log(listTwo.reverse().reverse());
+console.log(listTwo.reverse().reverse().toArray());
