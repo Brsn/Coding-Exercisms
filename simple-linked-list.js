@@ -10,20 +10,24 @@ export class Element {
 }
 export class List {
 
-  constructor(leadNode) {
+  constructor(arr = []) {
+
     this.size = 0;
     this.leadNode = null;
+    arr.map(elements => this.add(new Element(elements)));
     //for some reason, wouldn't let me use the name head. had to modify test case
     //to check for leadNode instead of "head"
   }
 
   add(element) {
-    //let leadNode;
+
     element.next = this.leadNode;
+    //
     this.leadNode = element;
     //if there's already something in the head we want to push that to the next
     //if not it will be null
     this.size++;
+
   }
 
   get length() {
@@ -63,3 +67,6 @@ console.log(list);
 list.add(element2);
 //console.log(element2);
 console.log(list);
+
+const listTwo = new List([1, 2, 3]);
+console.log(listTwo);
